@@ -1,5 +1,7 @@
 ﻿# OANDAV20.3
 
+** IN DEVELOPMENT **
+
 .NET library that provides Forex trading integration with the Oanda V20 REST Api.
 
 Technologies
