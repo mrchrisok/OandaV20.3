@@ -1,17 +1,18 @@
-﻿# OANDAV20.2
+﻿# OANDAV20.3
 
 .NET library that provides Forex trading integration with the Oanda V20 REST Api.
 
 Technologies
 - C# 7.0
-- .NET Framework 4.7.2
+- .NET Standard
 
-Version 2 Improvements
-- Strongly typed parameters for all V20 api operations
-- XML documentation comments for all properties and methods
-- Fully updated to Oanda REST-V20 Release 3.0.22
+Features
+- Updated to OandaV20 v3.0.25
+- Clients can set the AcceptDateTimeFormat header to specify format of DateTime fields in the request and response.
+- Fractional trade units are supported.
+- Latest candles (dancing bears and most recently completed candles) within an account are now available.
 
-To get the repo, run: git clone https://github.com/mrchrisok/OANDAV20.2.git
+To get the repo, run: git clone https://github.com/mrchrisok/OANDAV20.3.git
 
 To install the Nuget package, run: Install-Package OkonkwoOandaV20
 
@@ -19,4 +20,4 @@ For documentation, usage and examples, see: http://developer.oanda.com/rest-live
 
 For sample usage, see the sample app: OkonkwoOandaV20App
 
-Copyright (c) 2018 Osita Christopher Okonkwo
+Copyright (c) 2021 Osita Christopher Okonkwo
