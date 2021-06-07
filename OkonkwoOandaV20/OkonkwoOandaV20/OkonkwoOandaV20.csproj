@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>3.0.25</Version>
+	<Authors>Osita Christopher Okonkwo</Authors>
+	<PackageTags>Oanda;Oanda V20;FX Trading Api</PackageTags>
+	<Description>
+		Spot Forex trading library that provides programmatic access to the OANDA© v20 REST Api.
+		For this release see notes - https://github.com/mrchrisok/OandaV20.2/blob/master/README.md
+		Oanda V20 Api Reference - http://developer.oanda.com/rest-live-v20/introduction/
+	</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+  </ItemGroup>
+
+</Project>
