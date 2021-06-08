@@ -19,15 +19,15 @@ namespace OkonkwoOandaV20.TradeLibrary.REST
 	  /// <summary>
 	  /// The Request specification for the session.
 	  /// </summary>
-	  private Request _request;
+	  private readonly Request _request;
 
 	  /// <summary>
-	  /// The request sent to the remote host specified by the Request.
+	  /// The request sent to the remote host specified by the Request Uri.
 	  /// </summary>
 	  public HttpWebRequest WebRequest { get; private set; }
 
 	  /// <summary>
-	  /// The response received from the remote host specified by the Request.
+	  /// The response received from the remote host specified by the Request Uri.
 	  /// </summary>
 	  public WebResponse WebResponse { get; private set; }
 

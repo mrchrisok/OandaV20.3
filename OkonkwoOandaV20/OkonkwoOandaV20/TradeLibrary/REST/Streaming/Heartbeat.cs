@@ -10,7 +10,7 @@ namespace OkonkwoOandaV20.TradeLibrary.REST.Streaming
 	  public string type { get; set; }
 
 	  /// <summary>
-	  /// The date/time when the TransactionHeartbeat was created.
+	  /// The date-time when the TransactionHeartbeat was created.
 	  /// </summary>
 	  public DateTime time { get; set; }
    }

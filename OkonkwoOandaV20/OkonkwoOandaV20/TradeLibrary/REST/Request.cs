@@ -80,8 +80,7 @@ namespace OkonkwoOandaV20.TradeLibrary.REST
 	  }
 
 	  /// <summary>
-	  /// The serializer settings used to serialize the request body.
-	  /// The same settings will be used to de-serialize the response.
+	  /// The type converters used to write the request headers and query string.
 	  /// </summary>
 	  internal IList<ITypeConverter<string>> TypeConverters
 	  {
