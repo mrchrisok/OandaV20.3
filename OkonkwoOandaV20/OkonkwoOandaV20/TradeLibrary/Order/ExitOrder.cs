@@ -8,7 +8,7 @@ namespace OkonkwoOandaV20.TradeLibrary.Order
 	  /// <summary>
 	  /// The ID of the Trade to close when the price threshold is breached.
 	  /// </summary>
-	  public long tradeID { get; set; }
+	  public string tradeID { get; set; }
 
 	  /// <summary>
 	  /// The client ID of the Trade to be closed when the price threshold is
