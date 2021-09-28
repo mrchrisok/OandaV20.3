@@ -38,7 +38,7 @@ namespace OkonkwoOandaV20Tests.Framework.JsonConverters
 		 converter.WriteJson(writer, value, serializer);
 
 		 //assert
-		 Assert.IsTrue(stringBuilder.ToString() == $"\"{value}\"");
+		 Assert.IsTrue(stringBuilder.ToString() == System.FormattableString.Invariant($"\"{value}\""));
 	  }
    }
 }
