@@ -1,20 +1,26 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-	 <TargetFramework>netstandard2.0</TargetFramework>
-	 <Version>3.0.25</Version>
-	<Authors>Osita Christopher Okonkwo</Authors>
-	<PackageTags>Oanda;Oanda V20;FX Trading Api</PackageTags>
-	<Description>
-		Spot Forex trading library that provides programmatic access to the OANDA© v20 REST Api.
-		For this release see notes - https://github.com/mrchrisok/OandaV20.2/blob/master/README.md
-		Oanda V20 Api Reference - http://developer.oanda.com/rest-live-v20/introduction/
-	</Description>
-  </PropertyGroup>
+   <PropertyGroup>
+      <TargetFramework>netstandard2.0</TargetFramework>
+      <Version>3.0.25</Version>
+      <PackageLicenseFile>LICENSE</PackageLicenseFile>
+      <PackageReadmeFile>README.md</PackageReadmeFile>
+      <RepositoryUrl>https://github.com/mrchrisok/OandaV20.3</RepositoryUrl>
+      <RepositoryType>git</RepositoryType>
+      <PackageProjectUrl>http://developer.oanda.com/rest-live-v20/introduction/</PackageProjectUrl>
+      <Authors>Osita Christopher Okonkwo</Authors>
+      <PackageTags>Oanda;Oanda V20;FX Trading</PackageTags>
+      <Description>Forex trading library that enables integration with the OANDA© v20 REST Api.</Description>
+   </PropertyGroup>
 
-  <ItemGroup>
-	 <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-	 <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-  </ItemGroup>
+   <ItemGroup>
+      <None Include="..\LICENSE" Pack="true" PackagePath="" />
+      <None Include="..\README.md" Pack="true" PackagePath="" />
+   </ItemGroup>
+
+   <ItemGroup>
+      <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+   </ItemGroup>
 
 </Project>
