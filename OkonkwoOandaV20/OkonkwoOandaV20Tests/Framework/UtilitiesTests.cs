@@ -1,7 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OkonkwoOandaV20.Framework;
+﻿using OkonkwoOandaV20.Framework;
 using OkonkwoOandaV20.TradeLibrary.REST;
-using System;
 using System.Text.RegularExpressions;
 
 namespace OkonkwoOandaV20Tests.Framework
