@@ -1,0 +1,61 @@
+name: 00_Publish_Nuget_Pkg
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    
+jobs:
+  version_01:
+    name: Set Project Version
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set version
+        id: set_version
+        run: |
+          repoDateTime=${{github.event.repository.updated_at}}
+          versionNumber=$(echo $repoDateTime | cut -d "T" -f1 | sed 's/-/./g')
+          buildNumber=${{github.run_number}}
+          echo "Version is $versionNumber.$buildNumber"
+          echo "version=$versionNumber.$buildNumber" >> $GITHUB_OUTPUT
+    outputs:
+      version: ${{steps.set_version.outputs.version}}
+      
+  build_02: 
+    name: Build & Publish Nuget Package
+    runs-on: ubuntu-latest
+    needs: version_01
+    timeout-minutes: 15
+    
+    env:
+      PROJECT_NAME: OkonkwoOandaV20
+      PROJECT_FOLDER: ./OkonkwoOandaV20
+      PROJECT_FILE: ./OkonkwoOandaV20/OkonkwoOandaV20.csproj
+      VERSION: ${{needs.version_01.outputs.version}}
+      
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: "8.0.x"
+
+    - name: Build
+      working-directory: ${{env.PROJECT_FOLDER}}
+      run: |
+        dotnet build -c Release -p:Version=${{env.VERSION}}
+
+    - name: Pack
+      working-directory: ${{env.PROJECT_FOLDER}}
+      run: |
+        dotnet pack -c Release -p:PackageVersion=${{env.VERSION}} --no-build --output .
+
+    - name: Publish Nuget package
+      if: github.event_name == 'workflow_dispatch' && github.ref_name == 'main'
+      working-directory: ${{env.PROJECT_FOLDER}}
+      run: |
+        packageName="${{env.PROJECT_NAME}}.${{env.VERSION}}.nupkg"
+        sourceUrl="https://api.nuget.org/v3/index.json"
+        dotnet nuget push $packageName -s $sourceUrl -k ${{secrets.NUGET_API_KEY}}
