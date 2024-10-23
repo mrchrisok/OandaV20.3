@@ -1,14 +1,27 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+   <PropertyGroup>
+      <OutputType>Exe</OutputType>
+      <TargetFramework>net8.0</TargetFramework>
+      <ImplicitUsings>enable</ImplicitUsings>
+      <Nullable>enable</Nullable>
+      <Version>3.0.25</Version>
+      <PackageLicenseFile>LICENSE</PackageLicenseFile>
+      <PackageReadmeFile>README.md</PackageReadmeFile>
+      <RepositoryUrl>https://github.com/mrchrisok/OandaV20.3</RepositoryUrl>
+      <RepositoryType>git</RepositoryType>
+      <PackageProjectUrl>http://developer.oanda.com/rest-live-v20/introduction/</PackageProjectUrl>
+      <Authors>Osita Christopher Okonkwo</Authors>
+      <PackageTags>Oanda;Oanda V20;FX Trading</PackageTags>
+   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\OkonkwoOandaV20\OkonkwoOandaV20.csproj" />
-  </ItemGroup>
+   <ItemGroup>
+      <None Include="..\LICENSE" Pack="true" PackagePath="" />
+      <None Include="..\README.md" Pack="true" PackagePath="" />
+   </ItemGroup>
+
+   <ItemGroup>
+      <ProjectReference Include="..\OkonkwoOandaV20\OkonkwoOandaV20.csproj" />
+   </ItemGroup>
 
 </Project>
