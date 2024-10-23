@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>3.0.25</Version>
+	 <TargetFramework>netstandard2.0</TargetFramework>
+	 <Version>3.0.25</Version>
 	<Authors>Osita Christopher Okonkwo</Authors>
 	<PackageTags>Oanda;Oanda V20;FX Trading Api</PackageTags>
 	<Description>
@@ -13,7 +13,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+	 <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+	 <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
 </Project>

@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace OkonkwoOandaV20.TradeLibrary.REST
 {
-   /// <summary>
-   /// http://developer.oanda.com/rest-live-v20/introduction/
-   /// </summary>
-   public partial class Rest20
-   {
+	/// <summary>
+	/// http://developer.oanda.com/rest-live-v20/introduction/
+	/// </summary>
+	public partial class Rest20
+	{
 	  /// <summary>
 	  /// The time of the last request made to an Oanda V20 service
 	  /// </summary>
@@ -103,7 +103,7 @@ namespace OkonkwoOandaV20.TradeLibrary.REST
 		 {
 			foreach (var header in request.Headers)
 			{
-			   webRequest.Headers[header.Key] = header.Value;
+				webRequest.Headers[header.Key] = header.Value;
 			}
 		 }
 		 webRequest.Headers[HttpRequestHeader.Authorization] = $"Bearer {AccessToken}";
@@ -113,7 +113,7 @@ namespace OkonkwoOandaV20.TradeLibrary.REST
 		 {
 			using (var writer = new StreamWriter(await webRequest.GetRequestStreamAsync()))
 			{
-			   await writer.WriteAsync(request.Body);
+				await writer.WriteAsync(request.Body);
 			}
 		 }
 
@@ -142,8 +142,8 @@ namespace OkonkwoOandaV20.TradeLibrary.REST
 		 {
 			using (WebResponse response = await webRequest.GetResponseAsync())
 			{
-			   var message = GetResponseMessage<T>(response, request);
-			   return message;
+				var message = GetResponseMessage<T>(response, request);
+				return message;
 			}
 		 }
 		 catch (WebException ex)
@@ -201,5 +201,5 @@ namespace OkonkwoOandaV20.TradeLibrary.REST
 	  }
 
 	  #endregion
-   }
+	}
 }
