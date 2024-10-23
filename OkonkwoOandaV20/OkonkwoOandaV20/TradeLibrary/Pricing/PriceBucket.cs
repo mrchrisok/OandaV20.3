@@ -13,6 +13,6 @@
       /// <summary>
       /// The amount of liquidity offered by the PriceBucket
       /// </summary>
-      public int liquidity { get; set; }
+      public decimal liquidity { get; set; }
    }
 }
