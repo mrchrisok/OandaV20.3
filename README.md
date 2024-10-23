@@ -4,7 +4,7 @@
 
 Technologies
 - C# 7.0
-- .NET Standard
+- .NETStandard 2.0
 
 Features
 - Updated to OandaV20 v3.0.25
