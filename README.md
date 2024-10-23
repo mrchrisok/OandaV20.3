@@ -1,7 +1,5 @@
 ﻿# OANDAV20.3
 
-** IN DEVELOPMENT **
-
 .NET library that provides Forex trading integration with the Oanda V20 REST Api.
 
 Technologies
@@ -16,10 +14,10 @@ Features
 
 To get the repo, run: git clone https://github.com/mrchrisok/OANDAV20.3.git
 
-To install the Nuget package, run: Install-Package OkonkwoOandaV20
+To install the Nuget package, run: Install-Package OkonkwoOandaV23
 
 For documentation, usage and examples, see: http://developer.oanda.com/rest-live-v20/introduction
 
-For sample usage, see the sample app: OkonkwoOandaV20App
+For sample usage, see the sample app: OkonkwoOandaV23App
 
 Copyright (c) 2021 Osita Christopher Okonkwo
