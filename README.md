@@ -9,7 +9,7 @@ Technologies
 Features
 - Updated to OandaV20 v3.0.25
 - Clients can set the AcceptDateTimeFormat header to specify the format of DateTime fields in the request and response.
-- Fractional/decimal trade units are supported.
+- Decimal trade units are supported.
 - Latest candles (dancing bears and most recently completed candles) within an account are now available.
 
 To get the repo, run: git clone https://github.com/mrchrisok/OANDAV20.3.git
