@@ -43,7 +43,7 @@ namespace OkonkwoOandaV20Tests.TradeLibrary
       private static bool m_ApiOperationsComplete = false;
       private static string m_Currency = "USD";
       private static string m_TestInstrument = InstrumentName.Currency.USDCHF;
-      private static List<Instrument> m_OandaInstruments;
+      private static List<Instrument>? m_OandaInstruments;
       private static List<Price> m_OandaPrices;
       private static long m_FirstTransactionID;
       private static long m_LastTransactionID;
@@ -1022,9 +1022,9 @@ namespace OkonkwoOandaV20Tests.TradeLibrary
          ITransaction result = await Rest20.GetTransactionAsync(AccountID, m_LastTransactionID);
 
          m_Results.Verify("15.0", result != null, "Transaction info received.");
-         m_Results.Verify("15.1", result.id > 0, "Transaction has id.");
-         m_Results.Verify("15.2", result.type != null, "Transaction has type.");
-         m_Results.Verify("15.3", result.time != null, "Transaction has time.");
+         m_Results.Verify("15.1", result?.id > 0, "Transaction has id.");
+         m_Results.Verify("15.2", result?.type != null, "Transaction has type.");
+         m_Results.Verify("15.3", result?.time != default, "Transaction has time.");
       }
 
       private static async Task Transaction_GetTransactionsByIdRangeAsync()
@@ -1073,7 +1073,7 @@ namespace OkonkwoOandaV20Tests.TradeLibrary
          bool allPricesHaveAskLiquidity = prices.All(x => x.asks.FirstOrDefault()?.liquidity > 0);
 
          m_Results.Verify("06.0", prices != null, "Prices retrieved successfully.");
-         m_Results.Verify("06.1", prices.Count == m_OandaInstruments.Count, $"Correct count ({prices.Count}) of prices retrieved.");
+         m_Results.Verify("06.1", prices?.Count == m_OandaInstruments.Count, $"Correct count ({prices?.Count}) of prices retrieved.");
          m_Results.Verify("06.2", allPricesHaveBidLiquidity, $"All prices have bid liquidity.");
          m_Results.Verify("06.3", allPricesHaveAskLiquidity, $"All prices have ask liquidity.");
 
@@ -1197,7 +1197,7 @@ namespace OkonkwoOandaV20Tests.TradeLibrary
       /// Reads the api key from a supplied file name
       /// </summary>
       /// <returns></returns>
-      private static async Task SetApiCredentialsAsync(string fileName = null)
+      private static async Task SetApiCredentialsAsync(string? fileName = null)
       {
          fileName = fileName ?? @"C:\Users\mrchr\source\assets\OANDAV20\oandaPracticeApiCredentials.txt";
 
@@ -1234,16 +1234,16 @@ namespace OkonkwoOandaV20Tests.TradeLibrary
          Credentials.SetCredentials(m_TestEnvironment, m_TestToken, m_TestAccount);
       }
 
-      private static Instrument GetOandaInstrument(string instrument = null)
+      private static Instrument GetOandaInstrument(string? instrument = null)
       {
          instrument = instrument ?? m_TestInstrument;
-         return m_OandaInstruments.FirstOrDefault(x => x.name == instrument);
+         return m_OandaInstruments.First(x => x.name == instrument);
       }
 
-      private static decimal GetOandaPrice(string instrument = null)
+      private static decimal GetOandaPrice(string? instrument = null)
       {
          instrument = instrument ?? m_TestInstrument;
-         return m_OandaPrices.FirstOrDefault(x => x.instrument == instrument).closeoutBid;
+         return m_OandaPrices.First(x => x.instrument == instrument).closeoutBid;
       }
 
       /// <summary>

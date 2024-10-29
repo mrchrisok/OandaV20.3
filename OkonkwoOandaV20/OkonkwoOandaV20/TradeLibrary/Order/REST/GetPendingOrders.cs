@@ -9,28 +9,28 @@ namespace OkonkwoOandaV20.TradeLibrary.REST
    /// </summary>
    public partial class Rest20
    {
-	  /// <summary>
-	  /// Retrieves the list of pending orders belonging to the account
-	  /// </summary>
-	  /// <param name="accountID">the identifier of the account to retrieve the list for</param>
-	  /// <returns>a List of Order objects (or empty list, if no orders)</returns>
-	  public static async Task<List<IOrder>> GetPendingOrdersAsync(string accountID, PendingOrdersParameters parameters = null)
-	  {
-		 var request = new Request()
-		 {
-			Uri = $"{ServerUri(EServer.Account)}accounts/{accountID}/pendingOrders",
-			Method = "GET",
-			Parameters = parameters ?? new PendingOrdersParameters()
-		 };
+      /// <summary>
+      /// Retrieves the list of pending orders belonging to the account
+      /// </summary>
+      /// <param name="accountID">the identifier of the account to retrieve the list for</param>
+      /// <returns>a List of Order objects (or empty list, if no orders)</returns>
+      public static async Task<List<IOrder>> GetPendingOrdersAsync(string accountID, PendingOrdersParameters parameters = null)
+      {
+         var request = new Request()
+         {
+            Uri = $"{ServerUri(EServer.Account)}accounts/{accountID}/pendingOrders",
+            Method = "GET",
+            Parameters = parameters ?? new PendingOrdersParameters()
+         };
 
-		 var response = await MakeRequestAsync<PendingOrdersResponse, PendingOrdersErrorResponse>(request);
+         var response = await MakeRequestAsync<PendingOrdersResponse, PendingOrdersErrorResponse>(request);
 
-		 return new List<IOrder>(response.orders);
-	  }
+         return new List<IOrder>(response.orders);
+      }
 
-	  public class PendingOrdersParameters : Parameters
-	  {
-	  }
+      public class PendingOrdersParameters : Parameters
+      {
+      }
    }
 
    /// <summary>
