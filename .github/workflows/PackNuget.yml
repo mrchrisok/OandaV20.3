@@ -13,9 +13,6 @@ jobs:
       - name: Set version
         id: set_version
         run: |
-          repoDateTime=${{github.event.repository.pushed_at}}
-          repoDateTime=$(date -d $repoDateTime +"%Y-%m%-d")
-          versionNumber=$(echo $repoDateTime | sed 's/-/./g')
           majorPatchNumber=$(date +"%Y.%m%-d")
           buildNumber=${{github.run_number}}
           echo "Version is 3.$majorPatchNumber.$buildNumber"
