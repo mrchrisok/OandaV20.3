@@ -14,10 +14,11 @@ jobs:
         id: set_version
         run: |
           repoDateTime=${{github.event.repository.updated_at}}
-          versionNumber=$(echo $repoDateTime | cut -d "T" -f1 | sed 's/-/./g')
+          repoDateTime=$(date -d $repoDateTime +"%Y-%m%-d")
+          versionNumber=$(echo $repoDateTime | sed 's/-/./g')
           buildNumber=${{github.run_number}}
-          echo "Version is $versionNumber.$buildNumber"
-          echo "version=$versionNumber.$buildNumber" >> $GITHUB_OUTPUT
+          echo "Version is 3.$versionNumber.$buildNumber"
+          echo "version=3.$versionNumber.$buildNumber" >> $GITHUB_OUTPUT
     outputs:
       version: ${{steps.set_version.outputs.version}}
       
