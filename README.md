@@ -14,7 +14,7 @@ Features
 
 To get the repo, run: git clone https://github.com/mrchrisok/OANDAV20.3.git
 
-To install the Nuget package, run: Install-Package OkonkwoOandaV20 -version 3.*.*.*
+To install the Nuget package, run: Install-Package OkonkwoOandaV20 -version 3.#.#.#
 
 For documentation, usage and examples, see: http://developer.oanda.com/rest-live-v20/introduction
 
