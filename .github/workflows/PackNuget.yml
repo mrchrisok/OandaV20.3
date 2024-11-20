@@ -13,7 +13,7 @@ jobs:
       - name: Set version
         id: set_version
         run: |
-          repoDateTime=${{github.event.repository.updated_at}}
+          repoDateTime=${{github.event.repository.pushed_at}}
           repoDateTime=$(date -d $repoDateTime +"%Y-%m%-d")
           versionNumber=$(echo $repoDateTime | sed 's/-/./g')
           buildNumber=${{github.run_number}}
